@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>JS Assignment2</title>
+</head>
+<body>
+<div class="con">
+<h1>FUNCTION HANDSON</h1>
+    <pre>
+<p>Q1) Create one function with zero parameter having a console statement
+A1) function hello(){
+    console.log("Hello World!")
+    }
+    hello();
+<p class="op">O/P -> "Hello World!</p>
+
+<hr>
+
+Q2) Create one function which takes two values as a parameter and print the sum of them as "Sum of 3, 4 is 7"
+A2) function add(a,b){
+    s=a+b;
+    return s;
+    }
+    console.log(`Sum of of 3, 4 is ${add(3,4)}`)
+<p class="op">O/P -> Addition of 2 and 3 = 5</p>
+
+<hr>
+
+Q3) Create one arrow function
+A3) const mul=(a,b)=>{
+    m=a*b;
+    return m;
+    }
+    console.log(`Multiplication of 3, 4 is ${mul(3,4)}`)
+<p class="op">O/P -> Multiplication of 3,4 is 12</p>
+
+<hr>
+
+Q4)Print output: 
+    var x = 21;
+    var girl = function () {
+        console.log(x);
+        var x = 20;
+    };
+    girl ();
+
+<p class="op">O/P -> undefined</p>
+<p>Explanation - It is undefined because the variable in the function is not hoisted. When the function is executed it checks that
+              there is a local variable x is declared after the console statement.</p>
+
+<hr>
+
+Q5) Print output: 
+var x = 21;
+girl ();
+console.log(x)
+function girl() {
+    console.log(x);
+    var x = 20;
+}; 
+
+<p class="op">O/P -> Undefined<br>       21</p>
+<p>Explanaton - First the function is executed and the first console.log() is executed the output will be undefined because the
+             variable in the function is not hoisted. There is local variable x declared as var. After the function is executed
+             again the second console.log() is executed and this time it prints the value of x as 21 because it has global scope.
+    </p>
+
+<hr>
+
+Q6)Print output: 
+var x = 21;
+a();
+b();
+
+function a(){
+    x=20;
+    console.log(x);
+}
+function b(){
+    x=40;
+    console.log(x);
+}
+console.log(x);
+
+<p class="op">O/P -> 20<br>       40<br>       40</p>
+<p>Explanation - First the variable x is globally declared as var and then the function a() is called and again the variable is 
+              reinitialised as 20 because it doesn't have any datatype and bydefault it will have the properties of var and then 
+              it prints the value 20. Now,the function b() is called agian the variable is reinitialised as 40 because it doesn't 
+              have any datatype and bydefault it will have the properties of var and then it prints the value 40. At last,
+              console.log() after both functions is executed and print the value of global x as 40. 
+</p>
+
+<hr>
+
+Q7) Write a function that accepts parameter n and returns factorial of n
+var n=5;
+console.log(`Factorial of ${n} is ${fact(n)}`);
+fact(n)
+function fact(n)
+{
+    let f=1;
+    for(let i=1;i<=n;i++){
+        f=f*i;
+    }
+    return f;
+}
+
+<p class="op">O/P -> Factorial of 5 is 120</p>
+<hr>
+</p></pre>
+<h1>DAY 2</h1>
+<pre>
+Q1) Guess the Output
+
+function FindSum(a, b){
+    return a + b;
+}
+
+function DisplayData(data, batch){
+    console.log(`i am from ${data} and My batch is EA${batch}`)
+}
+
+DisplayData("PrepBytes", FindSum(20, 3));
+
+<p class="op">O/P -> i am from PrepBytes and My batch is EA23</p>
+<P>Explanation - First the function "DisplayData(data, batch)" is called which has 2 parameters, first one is a string and second one 
+              is a callback function "FindSum(20,3)" which is executed first and it returns the value as 23 and then the function 
+              DisplayData is executed and then it prints the statements in console.log().
+</P>
+
+<hr>
+
+Q2) Guess the output
+
+Abc();
+const Abc = function(){
+    let value = 20;
+    console.log(value);
+}
+
+<p class="op">O/P -> caught ReferenceError: Cannot access 'Abc' before initialization</p>
+<p>Explanation - Because we need to call the anonymous function later, with the assigned name "Abc"</p>
+
+<hr>
+
+Q3) Guess the output
+
+var a = 10;
+(function (){
+    console.log(a);
+    var a = 20;
+})
+();
+
+<p class="op">O/P -> undefined</p>
+<p>Explanaton - First the variable a is globally declared as var and then the function is executed and in the fucntion first
+             console.log() is executed before the locally variable a is declared as var. The output will be undefined because the 
+             variable in the function is not hoisted.</p>
+ 
+<hr>
+
+Q4) Guess the Output
+const greet =  function(name){
+    return function(m){
+    
+        console.log(`Hi!! ${name}, ${m}`);
+    }
+}
+  
+const greet_message = greet('EA19');
+greet_message("Welcome To PrepBytes")
+
+<p class="op">O/P -> Hi!! EA19, Welcome To PrepBytes</p>
+<p>Explanation - Here the 'greet' variable stores a the value return by a high order function and calling it with another name
+              'greet_message' which returns another function and console.log() is executed. </p>
+
+</pre>
+</div>
+
+<script src="./script.js"></script>
+</body>
+</html>
